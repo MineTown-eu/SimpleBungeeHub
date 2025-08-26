@@ -39,8 +39,12 @@ public class Hub extends Command{
 
                 ServerInfo serverInfo = ProxyServer.getInstance().getServerInfo(Main.config.getString("Settings.server"));
                 if(serverInfo !=null) {
-                    p.connect(serverInfo);
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getString("Messages.send")));
+                    if(!p.getServer().getInfo().equals(serverInfo)) {
+                        p.connect(serverInfo);
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getString("Messages.send")));
+                    }else{
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getString("Messages.already-on-server")));
+                    }
                 }else{
                     p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getString("Messages.server-offline")));
                 }

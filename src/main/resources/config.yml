@@ -9,3 +9,4 @@ Messages:
   send: "&aYou were send to the hub server."
   no-permission: "&cYou can't do that"
   server-offline: "&cSorry, but server is off."
+  already-on-server: "&cYou're already connected to the hub."
