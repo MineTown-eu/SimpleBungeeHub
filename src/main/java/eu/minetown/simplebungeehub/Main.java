@@ -19,7 +19,7 @@ public final class Main extends Plugin {
 
         getLogger().info("Plugin enabled.");
     }
-
+ 
     @Override
     public void onDisable() {
         getLogger().info("Plugin disabled.");
