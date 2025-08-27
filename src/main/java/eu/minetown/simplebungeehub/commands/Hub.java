@@ -9,6 +9,7 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Hub extends Command{
     private final Main plugin;
@@ -35,7 +36,7 @@ public class Hub extends Command{
             sender.sendMessage("§cCommand is only for players.");
         }else{
             ProxiedPlayer p = (ProxiedPlayer) sender;
-            if(p.hasPermission(Main.config.getString("Settings.permission")) || Main.config.getString("Settings.permission") == null){
+            if(p.hasPermission(Main.config.getString("Settings.permission")) || Objects.equals(Main.config.getString("Settings.permission"), "")){
 
                 ServerInfo serverInfo = ProxyServer.getInstance().getServerInfo(Main.config.getString("Settings.server"));
                 if(serverInfo !=null) {
